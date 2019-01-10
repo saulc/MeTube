@@ -112,6 +112,9 @@ public class FullscreenActivity extends AppCompatActivity {
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        VisualizerDialogFragment vf = VisualizerDialogFragment.newInstance();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fullscreen_content, vf).commit();
+
         // Trigger the initial hide() shortly after the activity has been
         // created, to briefly hint to the user that UI controls
         // are available.
